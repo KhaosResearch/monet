@@ -25,12 +25,12 @@ Once cloned, you can compile the software and generate a jar file with the follo
 ```
 mvn package
 ```
-This sentence will generate a directory called `target` which will contain a file called `jMetalMONET-1.0-SNAPSHOT-jar-with-dependencies.jar`
+This sentence will generate a directory called `target` which will contain a file called `monet-1.0-SNAPSHOT-jar-with-dependencies.jar`
 
 ## Runing MOCell
 To execute the algorithm to solve a problem in DREAM3, for example Ecoli1 size-10, just run this command:
 ````
-java -cp target/geneNetworks-1.0-SNAPSHOT-jar-with-dependencies.jar  org.uma.jmetal.runner.multiobjective.MOCellRunnerGRN /datasets-gnw/DREAM3/InSilicoSize10/InSilicoSize10-Ecoli1-trajectories.txt
+java -cp target/monet-1.0-SNAPSHOT-jar-with-dependencies.jar  org.uma.jmetal.runner.multiobjective.MOCellRunnerGRN /datasets-gnw/DREAM3/InSilicoSize10/InSilicoSize10-Ecoli1-trajectories.txt
 ```
 
 The output of the program are two files:
