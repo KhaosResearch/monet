@@ -28,7 +28,7 @@ mvn package
 This sentence will generate a directory called `target` which will contain a file called `jMetalMONET-1.0-SNAPSHOT-jar-with-dependencies.jar`
 
 ## Runing MOCell
-To execute the algorithm to solve a problem in Balibase, just run this command:
+To execute the algorithm to solve a problem in DREAM3, for example Ecoli1 size-10, just run this command:
 ````
 java -cp target/geneNetworks-1.0-SNAPSHOT-jar-with-dependencies.jar  org.uma.jmetal.runner.multiobjective.MOCellRunnerGRN /datasets-gnw/DREAM3/InSilicoSize10/InSilicoSize10-Ecoli1-trajectories.txt
 ```
