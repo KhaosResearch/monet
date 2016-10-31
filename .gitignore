@@ -1,0 +1,10 @@
+.idea
+target
+*.iml
+FUN.tsv
+VAR.tsv
+jMetal.log
+.RData
+*.r
+*.R
+.Rhistory
