@@ -5,7 +5,7 @@ Currently it contains an implementation of the MOCell algorithm configured with 
 
 ## Summary of features
 MONET containts the following features:
-* The algorithm is instantiated through a MOCEllRunner class, although other runners can be employed to use other well-known multi-objective algorithms: NSGAII,  SPEA2, MOEAD, and SMPSO.
+* The algorithm is instantiated through a MOCEllRunner class, although other runners can be employed to use other well-known multi-objective algorithms: NSGAII and SPEA2.
 * The included datasets in "resources" folder are: Noisy time-series (Sirbu et al., 2010) in files "SS5GeneratedData(0-10)Noise.txt" and DREAM3 Challenge for GRNs.
 * The "GeneNetWeaver" folder contains classess to covert solutions in variable files (VAR.tsv) to graphs representing the inferred networks.
 * more features ....
