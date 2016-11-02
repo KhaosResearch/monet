@@ -38,6 +38,7 @@ import java.util.List;
 /**
  * Class to configure and run the MOCell algorithm
  *
+ * @author José M. García-Nieto <jnieto@lcc.uma.es>
  * @author Antonio J. Nebro <antonio@lcc.uma.es>
  */
 public class MOCellRunnerGRN extends AbstractAlgorithmRunner {
@@ -73,7 +74,6 @@ public class MOCellRunnerGRN extends AbstractAlgorithmRunner {
           problem = new Tominaga99FromMA(2) ;
       }
 
-      //problem = (DoubleProblem) ProblemUtils.<DoubleSolution> loadProblem(problemName);
     double crossoverProbability = 0.9 ;
     double crossoverDistributionIndex = 5.0 ;
     crossover = new SBXCrossover(crossoverProbability, crossoverDistributionIndex) ;
