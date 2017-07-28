@@ -1,4 +1,4 @@
-# MONET: A Multi-objective Cellular Genetic Algorithm for the Inference of Gene Regulatory Networks
+# Inference of Gene Regulatory Networks With Cellular Genetic Algorithm: A Multi-objective Approach
 MONET is a software project aimed at solving the precise inference of Gene Regulatory Networks (GRNs) by using multi-objective metaheuristics. It is based on the jMetal multi-objective framework, which is extended with an new multi-objective approach for GRNs, and encoding of solutions to tune parameters in S-System model. 
 
 Currently it contains an implementation of the MOCell algorithm configured with a SBX crossover, polynomial mutation operators, and two objectives to optimize: MSE and Topology Regularization (TR). Additional classes for S-System modeling and time-series management are included in the util sub-folder of problem contents. 
