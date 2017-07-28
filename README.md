@@ -58,6 +58,8 @@ Lee, W.-P. and Hsiao, Y.-T. (2012). Inferring gene regulatory networks using a h
 
 Liu, P.-K. and Wang, F.-S. (2008). Inference of biochemical network models in ssystem using multiobjective optimization approach. Bioinformatics, 24(8), 1085– 1092.
 
+Liu, T., Zhang, X., and Gao, X. Stability analysis for continuous-time and discrete-time genetic regulatory networks with delays. Applied Mathematics and Computation, 274:628 – 643, 2016.
+
 Nebro, A. J., Durillo, J. J., Luna, F., Dorronsoro, B., and Alba, E. (2007). Design Issues in a Multiobjective Cellular Genetic Algorithm, pages 126–140. Springer Berlin Heidelberg, Berlin, Heidelberg.
 
 Nebro, A. J., Durillo, J. J., Garcia-Nieto, J., Coello Coello, C. A., Luna, F., and Alba, E. (2009). SMPSO: A new PSO-based metaheuristic for multi-objective optimization. In IEEE Symposium on Computational Intelligence in Multi-Criteria Decision-Making, pages 66–73.
