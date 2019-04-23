@@ -64,17 +64,17 @@
     <dependency>
       <groupId>org.uma.jmetal</groupId>
       <artifactId>jmetal-core</artifactId>
-      <version>5.1-SNAPSHOT</version>
+      <version>5.6</version>
     </dependency>
     <dependency>
       <groupId>org.uma.jmetal</groupId>
       <artifactId>jmetal-exec</artifactId>
-      <version>5.1-SNAPSHOT</version>
+      <version>5.6</version>
     </dependency>
     <dependency>
       <groupId>org.uma.jmetal</groupId>
       <artifactId>jmetal-algorithm</artifactId>
-      <version>5.1-SNAPSHOT</version>
+      <version>5.6</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -98,6 +98,76 @@
           <artifactId>jung-api</artifactId>
           <version>2.1</version>
       </dependency>
+    <dependency>
+      <groupId>org.uma.jmetal</groupId>
+      <artifactId>geneNetworks</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.uma.jmetal</groupId>
+      <artifactId>geneNetworks</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.uma.jmetal</groupId>
+      <artifactId>jmetal-exec</artifactId>
+      <version>5.3-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.uma.jmetal</groupId>
+      <artifactId>jmetal-core</artifactId>
+      <version>5.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.uma.jmetal</groupId>
+      <artifactId>jmetal-exec</artifactId>
+      <version>5.3-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.uma.jmetal</groupId>
+      <artifactId>jmetal-exec</artifactId>
+      <version>5.3-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.uma.jmetal</groupId>
+      <artifactId>jmetal-core</artifactId>
+      <version>5.5.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.uma.jmetal</groupId>
+      <artifactId>jmetal-core</artifactId>
+      <version>5.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.uma.jmetal</groupId>
+      <artifactId>jmetal-core</artifactId>
+      <version>5.5.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.uma.jmetal</groupId>
+      <artifactId>geneNetworks</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.uma.jmetal</groupId>
+      <artifactId>jmetal-core</artifactId>
+      <version>5.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.uma.jmetal</groupId>
+      <artifactId>jmetal-core</artifactId>
+      <version>5.5.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.uma.jmetal</groupId>
+      <artifactId>jmetal-core</artifactId>
+      <version>5.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.uma.jmetal</groupId>
+      <artifactId>jmetal-core</artifactId>
+      <version>5.5.2</version>
+    </dependency>
 
 
   </dependencies>

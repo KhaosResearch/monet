@@ -1,0 +1,1 @@
+matlab -nodisplay -nosplash -nodesktop -r "run('C:\Users\Jose-Manuel\Software\jmetalmaven\datasets-gnw\DREAM4\DREAM4_Challenge2_Script\matlab\go_all.m');"
