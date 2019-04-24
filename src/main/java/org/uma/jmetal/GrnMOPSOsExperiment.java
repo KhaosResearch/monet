@@ -34,16 +34,26 @@ public class GrnMOPSOsExperiment
     String referenceFrontDirectory = args[1];
 
     List<ExperimentProblem<DoubleSolution>> problemList = new ArrayList();
-    problemList.add(new ExperimentProblem(new P("10-Ecoli1", 60)));
+    /*problemList.add(new ExperimentProblem(new P("10-Ecoli1", 60)));
     problemList.add(new ExperimentProblem(new P("10-Ecoli2", 60)));
     problemList.add(new ExperimentProblem(new P("10-Yeast1", 60)));
     problemList.add(new ExperimentProblem(new P("10-Yeast2", 60)));
     problemList.add(new ExperimentProblem(new P("10-Yeast3", 60)));
     problemList.add(new ExperimentProblem(new P("10-1", 60)));
     problemList.add(new ExperimentProblem(new P("10-2", 60)));
-    problemList.add(new ExperimentProblem(new P("10-1", 60)));
-    problemList.add(new ExperimentProblem(new P("10-2", 60)));
     problemList.add(new ExperimentProblem(new P("10-3", 60)));
+    problemList.add(new ExperimentProblem(new P("10-4", 60)));
+    problemList.add(new ExperimentProblem(new P("10-5", 60)));*/
+    problemList.add(new ExperimentProblem(new P("100-Ecoli1", 60)));
+    problemList.add(new ExperimentProblem(new P("100-Ecoli2", 60)));
+    problemList.add(new ExperimentProblem(new P("100-Yeast1", 60)));
+    problemList.add(new ExperimentProblem(new P("100-Yeast2", 60)));
+    problemList.add(new ExperimentProblem(new P("100-Yeast3", 60)));
+    problemList.add(new ExperimentProblem(new P("100-1", 60)));
+    problemList.add(new ExperimentProblem(new P("100-2", 60)));
+    problemList.add(new ExperimentProblem(new P("100-1", 60)));
+    problemList.add(new ExperimentProblem(new P("100-4", 60)));
+    problemList.add(new ExperimentProblem(new P("100-5", 60)));
 
     List<ExperimentAlgorithm<DoubleSolution, List<DoubleSolution>>> algorithmList = configureAlgorithmList(problemList);
 
@@ -65,7 +75,7 @@ public class GrnMOPSOsExperiment
             .setNumberOfCores(8).build();
 
     new GenerateReferenceParetoFront(experiment).run();
-    new GenerateReferenceParetoSetAndFrontFromDoubleSolutions(experiment).run();
+    //new GenerateReferenceParetoSetAndFrontFromDoubleSolutions(experiment).run();
     new ComputeQualityIndicators(experiment).run();
     new GenerateLatexTablesWithStatistics(experiment).run();
     new GenerateWilcoxonTestTablesWithR(experiment).run();
