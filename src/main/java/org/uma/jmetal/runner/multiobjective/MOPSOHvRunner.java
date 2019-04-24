@@ -25,6 +25,7 @@ import org.uma.jmetal.algorithm.multiobjective.pso.mopsohv.MOPSOHvBuilder;
 import org.uma.jmetal.operator.MutationOperator;
 import org.uma.jmetal.operator.impl.mutation.PolynomialMutation;
 import org.uma.jmetal.problem.DoubleProblem;
+import org.uma.jmetal.problem.grn.Tominaga99FromMA;
 import org.uma.jmetal.solution.DoubleSolution;
 import org.uma.jmetal.util.AlgorithmRunner;
 import org.uma.jmetal.util.JMetalLogger;
@@ -58,20 +59,23 @@ public class MOPSOHvRunner {
 
     String referenceParetoFront = "";
 
-    String problemName;
+    String problemName ;
     if (args.length == 1) {
       problemName = args[0];
+      System.out.println(problemName);
+      problem = new Tominaga99FromMA(2,args[0]) ;
     } else if (args.length == 2) {
-      problemName = args[0];
-      referenceParetoFront = args[1];
+      problemName = args[0] ;
+      System.out.println(problemName);
+      referenceParetoFront = args[1] ;
+      problem = new Tominaga99FromMA(2,args[0]) ;
     } else {
-      //problemName = "org.uma.jmetal.problem.multiobjective.dtlz.DTLZ2";
-      //referenceParetoFront = "jmetal-problem/src/test/resources/pareto_fronts/DTLZ1-2D.pf";
-      problemName = "org.uma.jmetal.problem.multiobjective.zdt.ZDT1";
-      referenceParetoFront = "jmetal-problem/src/test/resources/pareto_fronts/ZDT4.pf" ;
+      problemName = "/datasets-gnw/DREAM3/InSilicoSize10/InSilicoSize10-Ecoli1-trajectories.txt";
+      referenceParetoFront = "jmetal-problem/src/test/resources/pareto_fronts/Tominaga5SSGeneratedData.pf" ;
+      problem = new Tominaga99FromMA(2) ;
     }
 
-    problem = (DoubleProblem) ProblemUtils.<DoubleSolution>loadProblem(problemName);
+    //problem = (DoubleProblem) ProblemUtils.<DoubleSolution>loadProblem(problemName);
 
     double mutationProbability = 1.0 / problem.getNumberOfVariables();
     double mutationDistributionIndex = 20.0;

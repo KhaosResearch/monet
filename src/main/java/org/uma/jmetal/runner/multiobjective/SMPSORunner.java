@@ -26,6 +26,7 @@ import org.uma.jmetal.algorithm.multiobjective.pso.smpso.SMPSOBuilder;
 import org.uma.jmetal.operator.MutationOperator;
 import org.uma.jmetal.operator.impl.mutation.PolynomialMutation;
 import org.uma.jmetal.problem.DoubleProblem;
+import org.uma.jmetal.problem.grn.Tominaga99FromMA;
 import org.uma.jmetal.solution.DoubleSolution;
 import org.uma.jmetal.util.AlgorithmRunner;
 import org.uma.jmetal.util.JMetalLogger;
@@ -71,17 +72,20 @@ public class SMPSORunner {
     String problemName ;
     if (args.length == 1) {
       problemName = args[0];
+      System.out.println(problemName);
+      problem = new Tominaga99FromMA(2,args[0]) ;
     } else if (args.length == 2) {
       problemName = args[0] ;
+      System.out.println(problemName);
       referenceParetoFront = args[1] ;
+      problem = new Tominaga99FromMA(2,args[0]) ;
     } else {
-      //problemName = "org.uma.jmetal.problem.multiobjective.dtlz.DTLZ1";
-      //referenceParetoFront = "jmetal-problem/src/test/resources/pareto_fronts/DTLZ1.3D.pf" ;
-      problemName = "org.uma.jmetal.problem.multiobjective.zdt.ZDT4";
-      referenceParetoFront = "/referenceFronts/ZDT4.pf" ;
+      problemName = "/datasets-gnw/DREAM3/InSilicoSize10/InSilicoSize10-Ecoli1-trajectories.txt";
+      referenceParetoFront = "jmetal-problem/src/test/resources/pareto_fronts/Tominaga5SSGeneratedData.pf" ;
+      problem = new Tominaga99FromMA(2) ;
     }
 
-    problem = (DoubleProblem) ProblemUtils.<DoubleSolution> loadProblem(problemName);
+    //problem = (DoubleProblem) ProblemUtils.<DoubleSolution> loadProblem(problemName);
 
     BoundedArchive<DoubleSolution> archive =
         new CrowdingDistanceArchive<>(100) ;

@@ -16,6 +16,7 @@ package org.uma.jmetal.runner.multiobjective;
 import org.uma.jmetal.algorithm.Algorithm;
 import org.uma.jmetal.algorithm.multiobjective.pso.dmopso.DMOPSO;
 import org.uma.jmetal.problem.DoubleProblem;
+import org.uma.jmetal.problem.grn.Tominaga99FromMA;
 import org.uma.jmetal.solution.DoubleSolution;
 import org.uma.jmetal.util.AbstractAlgorithmRunner;
 import org.uma.jmetal.util.AlgorithmRunner;
@@ -48,18 +49,23 @@ public class DMOPSORunner extends AbstractAlgorithmRunner {
     String problemName ;
     if (args.length == 1) {
       problemName = args[0];
+      System.out.println(problemName);
+      problem = new Tominaga99FromMA(2,args[0]) ;
     } else if (args.length == 2) {
       problemName = args[0] ;
+      System.out.println(problemName);
       referenceParetoFront = args[1] ;
+      problem = new Tominaga99FromMA(2,args[0]) ;
     } else {
-      problemName = "org.uma.jmetal.problem.multiobjective.dtlz.DTLZ6";
-      referenceParetoFront = "/referenceFronts/DTLZ1.3D.pf" ;
+      problemName = "/datasets-gnw/DREAM3/InSilicoSize10/InSilicoSize10-Ecoli1-trajectories.txt";
+      referenceParetoFront = "jmetal-problem/src/test/resources/pareto_fronts/Tominaga5SSGeneratedData.pf" ;
+      problem = new Tominaga99FromMA(2) ;
     }
 
-    problem = (DoubleProblem) ProblemUtils.<DoubleSolution> loadProblem(problemName);
+    //problem = (DoubleProblem) ProblemUtils.<DoubleSolution> loadProblem(problemName);
 
     algorithm = new DMOPSO(problem,
-            100, 500, 0.0, 1.0, 0.0, 1.0, 1.2, 2.0, 1.2, 2.0, 0.1, 0.5,
+            100, 250, 0.0, 1.0, 0.0, 1.0, 1.2, 2.0, 1.2, 2.0, 0.1, 0.5,
             -1.0, -1.0, "_TCHE",
             "/Users/ajnebro/Softw/jMetal/metaheuristicsBook/src/main/resources/MOEAD_Weights", 2) ;
 

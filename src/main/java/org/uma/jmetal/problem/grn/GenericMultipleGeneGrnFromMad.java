@@ -28,7 +28,7 @@ public abstract class GenericMultipleGeneGrnFromMad extends AbstractDoubleProble
 	protected int modelType=0; // 0 S-System ; 1 Linear System
 
 	protected double[][] parameterRange;
-	protected double[] rateConstantsRange= {0,10};//{0,10}; //// (IRMA) {0,20}
+	protected double[] rateConstantsRange= {0,1};//{0,10}; //// (IRMA) {0,20}
 	protected double[] kineticOrdersRange= {0,1};//{0,1};  //{-3,3};  //// (IRMA) {0,2}
 
 	//CONSTRUCTORS
@@ -125,7 +125,7 @@ public abstract class GenericMultipleGeneGrnFromMad extends AbstractDoubleProble
 		fitness[0]=((CompleteGeneModelEvaluator) this.evaluator).evaluate(model);
 		//fitness[1]=regularize(parameters);
 		fitness[1]=regularizeNomanIba(parameters);
-        //System.out.println(fitness[0]+"  "+fitness[1]);
+        System.out.println(fitness[0]+"  "+fitness[1]);
 
 		if (Double.isInfinite(fitness[0]) || Double.isNaN(fitness[0]))
 			fitness[0] = Double.MAX_VALUE / 2;

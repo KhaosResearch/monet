@@ -39,10 +39,30 @@ public class GrnMOPSOsExperiment
     problemList.add(new ExperimentProblem(new P("10-Yeast1", 60)));
     problemList.add(new ExperimentProblem(new P("10-Yeast2", 60)));
     problemList.add(new ExperimentProblem(new P("10-Yeast3", 60)));
+    problemList.add(new ExperimentProblem(new P("10-1", 60)));
+    problemList.add(new ExperimentProblem(new P("10-2", 60)));
+    problemList.add(new ExperimentProblem(new P("10-1", 60)));
+    problemList.add(new ExperimentProblem(new P("10-2", 60)));
+    problemList.add(new ExperimentProblem(new P("10-3", 60)));
 
     List<ExperimentAlgorithm<DoubleSolution, List<DoubleSolution>>> algorithmList = configureAlgorithmList(problemList);
 
-    Experiment<DoubleSolution, List<DoubleSolution>> experiment = new ExperimentBuilder("results").setAlgorithmList(algorithmList).setProblemList(problemList).setExperimentBaseDirectory(experimentBaseDirectory).setOutputParetoFrontFileName("FUN").setOutputParetoSetFileName("VAR").setReferenceFrontDirectory(referenceFrontDirectory).setIndicatorList(Arrays.asList(new GenericIndicator[] { new Epsilon(), new Spread(), new GenerationalDistance(), new PISAHypervolume(), new InvertedGenerationalDistance(), new InvertedGenerationalDistancePlus() })).setIndependentRuns(25).setNumberOfCores(8).build();
+    Experiment<DoubleSolution, List<DoubleSolution>> experiment = new ExperimentBuilder("results")
+            .setAlgorithmList(algorithmList).setProblemList(problemList)
+            .setExperimentBaseDirectory(experimentBaseDirectory)
+            .setOutputParetoFrontFileName("FUN")
+            .setOutputParetoSetFileName("VAR")
+            .setReferenceFrontDirectory(referenceFrontDirectory)
+            .setIndicatorList(Arrays.asList(
+                    new GenericIndicator[] {
+                            new Epsilon(),
+                            new Spread(),
+                            new GenerationalDistance(),
+                            new PISAHypervolume(),
+                            new InvertedGenerationalDistance(),
+                            new InvertedGenerationalDistancePlus()
+                    })).setIndependentRuns(25)
+            .setNumberOfCores(8).build();
 
     new GenerateReferenceParetoFront(experiment).run();
     new GenerateReferenceParetoSetAndFrontFromDoubleSolutions(experiment).run();

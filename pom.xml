@@ -168,6 +168,11 @@
       <artifactId>jmetal-core</artifactId>
       <version>5.5.2</version>
     </dependency>
+      <dependency>
+          <groupId>com.github.fburato</groupId>
+          <artifactId>highweel-modules-cli</artifactId>
+          <version>1.0.0-SNAPSHOT</version>
+      </dependency>
 
 
   </dependencies>

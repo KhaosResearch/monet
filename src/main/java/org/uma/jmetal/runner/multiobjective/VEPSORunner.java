@@ -24,6 +24,7 @@ import org.uma.jmetal.algorithm.Algorithm;
 import org.uma.jmetal.algorithm.multiobjective.pso.vepso.VEPSO;
 import org.uma.jmetal.operator.MutationOperator;
 import org.uma.jmetal.problem.DoubleProblem;
+import org.uma.jmetal.problem.grn.Tominaga99FromMA;
 import org.uma.jmetal.solution.DoubleSolution;
 import org.uma.jmetal.util.AbstractAlgorithmRunner;
 import org.uma.jmetal.util.AlgorithmRunner;
@@ -59,15 +60,20 @@ public class VEPSORunner extends AbstractAlgorithmRunner {
     String problemName ;
     if (args.length == 1) {
       problemName = args[0];
+      System.out.println(problemName);
+      problem = new Tominaga99FromMA(2,args[0]) ;
     } else if (args.length == 2) {
       problemName = args[0] ;
+      System.out.println(problemName);
       referenceParetoFront = args[1] ;
+      problem = new Tominaga99FromMA(2,args[0]) ;
     } else {
-      problemName = "org.uma.jmetal.problem.multiobjective.zdt.ZDT1";
-      referenceParetoFront = "/pareto_fronts/ZDT1.pf" ;
+      problemName = "/datasets-gnw/DREAM3/InSilicoSize10/InSilicoSize10-Ecoli1-trajectories.txt";
+      referenceParetoFront = "jmetal-problem/src/test/resources/pareto_fronts/Tominaga5SSGeneratedData.pf" ;
+      problem = new Tominaga99FromMA(2) ;
     }
 
-    problem = (DoubleProblem) ProblemUtils.<DoubleSolution> loadProblem(problemName);
+    //problem = (DoubleProblem) ProblemUtils.<DoubleSolution> loadProblem(problemName);
 
     Archive<DoubleSolution> archive = new CrowdingDistanceArchive<DoubleSolution>(100) ;
 

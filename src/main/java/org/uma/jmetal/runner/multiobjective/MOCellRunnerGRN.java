@@ -86,7 +86,7 @@ public class MOCellRunnerGRN extends AbstractAlgorithmRunner {
 
     algorithm = new MOCellBuilder<DoubleSolution>(problem, crossover, mutation)
         .setSelectionOperator(selection)
-        .setMaxEvaluations(1000000)
+        .setMaxEvaluations(250000)
         .setPopulationSize(100)
         .setArchive(new CrowdingDistanceArchive<DoubleSolution>(100))
         .build() ;

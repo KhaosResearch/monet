@@ -18,6 +18,7 @@ import org.uma.jmetal.algorithm.multiobjective.pso.omopso.OMOPSOBuilder;
 import org.uma.jmetal.operator.impl.mutation.NonUniformMutation;
 import org.uma.jmetal.operator.impl.mutation.UniformMutation;
 import org.uma.jmetal.problem.DoubleProblem;
+import org.uma.jmetal.problem.grn.Tominaga99FromMA;
 import org.uma.jmetal.solution.DoubleSolution;
 import org.uma.jmetal.util.AbstractAlgorithmRunner;
 import org.uma.jmetal.util.AlgorithmRunner;
@@ -49,23 +50,23 @@ public class OMOPSORunner extends AbstractAlgorithmRunner {
 
     String variant = "epsilonArchive" ;
 
-    String problemName;
+    String problemName ;
     if (args.length == 1) {
       problemName = args[0];
+      System.out.println(problemName);
+      problem = new Tominaga99FromMA(2,args[0]) ;
     } else if (args.length == 2) {
-      problemName = args[0];
-      referenceParetoFront = args[1];
-      variant = "epsilonArchive";
-    } else if (args.length == 3) {
-      problemName = args[0];
-      referenceParetoFront = args[1];
-      variant = args[2];
+      problemName = args[0] ;
+      System.out.println(problemName);
+      referenceParetoFront = args[1] ;
+      problem = new Tominaga99FromMA(2,args[0]) ;
     } else {
-      problemName = "org.uma.jmetal.problem.multiobjective.dtlz.DTLZ7";
-      referenceParetoFront = "/pareto_fronts/DTLZ1.3D.pf";
+      problemName = "/datasets-gnw/DREAM3/InSilicoSize10/InSilicoSize10-Ecoli1-trajectories.txt";
+      referenceParetoFront = "jmetal-problem/src/test/resources/pareto_fronts/Tominaga5SSGeneratedData.pf" ;
+      problem = new Tominaga99FromMA(2) ;
     }
 
-    problem = (DoubleProblem) ProblemUtils.<DoubleSolution>loadProblem(problemName);
+    //problem = (DoubleProblem) ProblemUtils.<DoubleSolution>loadProblem(problemName);
 
     double mutationProbability = 1.0 / problem.getNumberOfVariables();
 
